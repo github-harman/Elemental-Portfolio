@@ -1,91 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
 
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
 
-:root{
-    --color1:#222831;
-    --color2:#256D85;
-    --color3:#47B5FF;
-    --color4:#DFF6FF;
-    --color5:#FCFFB2;
+:root {
+    --color1: #222831;
+    --color2: #256D85;
+    --color3: #47B5FF;
+    --color4: #DFF6FF;
+    --color5: #FCFFB2;
 }
 
-.super{
+.super {
     height: 100vh;
 }
 
-.circle{
+.circle {
     border-radius: 50%;
     overflow: hidden;
 }
 
-body{
+body {
     /* background-color: var(--color1); */
     color: var(--color4);
     font-family: 'Poppins', sans-serif;
 }
 
-.card{
+.card {
     background-color: var(--color2);
 }
 
-.navbar-custom{
-    background-color: var(--color2);
-    
-}
-.navbar-custom ul{
+.navbar-custom {
     background-color: var(--color2);
 }
-.navbar-custom a{
+
+.navbar-custom ul {
+    background-color: var(--color2);
+}
+
+.navbar-custom a {
     color: var(--color4)!important;
-    
 }
 
-#particles-js{
+#particles-js {
     position: fixed;
     z-index: -1;
     width: 100vw;
     height: 100vh;
     background-color: var(--color1);
 }
-.footer ul{
+
+.footer ul {
     list-style: none;
 }
 
-.footer ul li a{
+.footer ul li a {
     color: var(--color4);
     text-decoration: none;
 }
 
-.bold-head{
+.bold-head {
     font-weight: 200;
 }
 
-.typewriter{
+.typewriter {
     display: inline-block;
 }
 
-.text-typewriter{
+.text-typewriter {
     color: var(--color4);
     font-weight: 300;
     font-size: 50px;
     letter-spacing: 5px;
-    border-right: 2px solid;
-    width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    animation: 
-        typing 4s steps(30) infinite,
-        cursor .4s step-end infinite alternate;
-}
-
-@keyframes cursor {
-    50% {border-color: transparent}
+    position: relative;
+    animation: typing 5s steps(30) infinite;
 }
 
 @keyframes typing {
-    from {width: 0}
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.text-typewriter::after {
+    content: '|'; /* Cursor */
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: blink 0.7s infinite alternate;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
